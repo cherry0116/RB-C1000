@@ -13,8 +13,29 @@ Our method follows a three-stage architecture:
 
 ### Dataset
 
-We have constructed new real/bogus classification datasets from [the Zwicky Transient Facility (ZTF)](https://arxiv.org/abs/1902.01932) to verify the effectiveness of our approach. We collected three newly compiled datasets for the real/bogus classification task, including two single-band datasets (ZTF-NEWg: g-band, ZTF-NEWr: r-band) and one mixed-band dataset (ZTF-NEWm: take half of the g-band data and half of the r-band data). Each of the three dataset with 13000 real sources and 30000 bogus detections. It can be downloaded at [here]()
+We have constructed new real/bogus classification datasets from [the Zwicky Transient Facility (ZTF)](https://arxiv.org/abs/1902.01932) to verify the effectiveness of our approach. We collected three newly compiled datasets for the real/bogus classification task, including two single-band datasets (ZTF-NEWg: g-band, ZTF-NEWr: r-band) and one mixed-band dataset (ZTF-NEWm: take half of the g-band data and half of the r-band data). Each of the three dataset with 13000 real sources and 30000 bogus detections. It can be downloaded at [here]().
 
 ## Usage
 ### Train
+
+Clone this project and then go to the code directory:
+
+    git clone https://github.com/cherry0116/RB-C1000.git
+    cd cls_code
+
+We train the model on the following environments:
+
+    Python 3.8
+    Pytorch 1.13.1
+    Torchvision 0.14.1 
+    Torchaudio 0.13.1
+    Cuda 11.6
+
+You can build the environment quickly by installing the requirements:
+
+    conda env create -f requirements.yml
+    conda activate astro_cls
+
+Train RB-C1000:
+
 ### Evaluate

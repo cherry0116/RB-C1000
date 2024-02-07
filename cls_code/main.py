@@ -19,6 +19,8 @@ import re_train
 def parse_opt():
     """Parses the input arguments."""
     parser = argparse.ArgumentParser()
+    parser.add_argument('--random_number', type=int,default=0)
+
     parser.add_argument('--train_labidx_num', type=int,default=1000)  #train_labidx_num
     parser.add_argument('--test_ratio', type=float,default=0.1)    #test_idx_split_ratio
     parser.add_argument('--trainval_ratio', type=str,default='6,4')    #train_labidx_train,train_labidx_val
@@ -30,7 +32,7 @@ def parse_opt():
     parser.add_argument('--hard_select', type=str, default='yes')
     parser.add_argument('--online_test', type=str, default='yes')
     parser.add_argument('--final_test', type=str, default='yes')
-    parser.add_argument('--repeat_times', type=int, default=5)
+    parser.add_argument('--repeat_times', type=int, default=3)
     parser.add_argument('--first_select_ratio', type=float, default=0.9)
     parser.add_argument('--bias_select_ratio', type=float, default=0.001)
     parser.add_argument('--threshold', type=float, default=0.95)
@@ -45,8 +47,8 @@ def parse_opt():
     args = parser.parse_args()
     return args
 
-def main(random_number):
-    main_opt = parse_opt()
+def main(main_opt):
+    random_number = main_opt.random_number
     time_now=time.strftime("%Y.%m.%d_%H%M%S", time.localtime())
     save_root_path='./save_log_when_training/'+str(main_opt.data_name)+'_'+str(time_now)+'_random_number'+str(random_number)+'_level'+str(main_opt.unlab_level)+'_'+str(main_opt.train_labidx_num)+'_'+str(main_opt.test_ratio)+'_'+str(main_opt.trainval_ratio)
     first_train_path=save_root_path+'/first_train'
@@ -69,11 +71,11 @@ def main(random_number):
         second_train_path=retrain_path
 
 if __name__ == '__main__':
-    random_number=0
-    np.random.seed(random_number)
-    torch.manual_seed(random_number)
-    random.seed(random_number)
-    torch.cuda.manual_seed(random_number)
-    torch.cuda.manual_seed_all(random_number)
+    main_opt = parse_opt()
+    np.random.seed(main_opt.random_number)
+    torch.manual_seed(main_opt.random_number)
+    random.seed(main_opt.random_number)
+    torch.cuda.manual_seed(main_opt.random_number)
+    torch.cuda.manual_seed_all(main_opt.random_number)
     torch.backends.cudnn.deterministic=True
-    main(random_number)
+    main(main_opt)

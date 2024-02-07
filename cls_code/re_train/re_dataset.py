@@ -39,7 +39,7 @@ def create_dataset( main_opt,train_labidx, test_idx ,pse_idx, pse_lab,img_size):
     np.random.shuffle(shuffle_idx)
     reshuffle_train_labidx=train_labidx[shuffle_idx]
 
-    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(np.int)
+    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(int)
     reshuffle_train_labidx_train,reshuffle_train_labidx_val=reshuffle_train_labidx[:train_val_num[0]],reshuffle_train_labidx[train_val_num[0]:]
          
     reshuffle_train_labidx_train_imgs,reshuffle_train_labidx_val_imgs, test_imgs =  imgs_np[reshuffle_train_labidx_train],\

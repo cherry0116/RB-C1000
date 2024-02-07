@@ -77,7 +77,7 @@ def create_dataset(main_opt,first_train_labidx,select_train_idx,test_idx,img_siz
     train_labidx=np.array(first_train_labidx.tolist()+select_select_train_idxs.tolist())
     train_labidx=train_labidx[shuffle_idx]
 
-    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(np.int)
+    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(int)
     train_labidx_train,train_labidx_val=train_labidx[:train_val_num[0]],train_labidx[train_val_num[0]:]
           
     #get different split 

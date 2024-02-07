@@ -1,0 +1,3 @@
+/__pycache__/
+/save_log_when_training/
+/save_load_from_ckpt/

@@ -7,9 +7,9 @@ The classification of real and bogus transients is a fundamental component in a 
 <img src="picture/pipeline.png" alt="vis2" style="zoom:30%;" />
 
 Our method follows a three-stage architecture:    
-    - **In the Initial Training Stage**, each labeled sample undergoes convolutional neural network processing to train an initial model. Subsequently, domain experts annotate the $K$ most challenging samples, as determined by the initial model's judgments.   
-    - **During the Active Learning Stage**, we employ the combined set of $(M+K)$ labeled samples to train an active training model. From this model, we select the top $V$ samples with high-confidence predictions and assign pseudo-labels to them.   
-    - **In the Semi-supervised Learning Stage**, we utilize the expanded dataset of $(M+K+V)$ samples to train a semi-supervised training model. This process is repeated for a total of $R$ iterations to obtain the final results.  
+- **In the Initial Training Stage**, each labeled sample undergoes convolutional neural network processing to train an initial model. Subsequently, domain experts annotate the $K$ most challenging samples, as determined by the initial model's judgments.   
+- **During the Active Learning Stage**, we employ the combined set of $(M+K)$ labeled samples to train an active training model. From this model, we select the top $V$ samples with high-confidence predictions and assign pseudo-labels to them.   
+- **In the Semi-supervised Learning Stage**, we utilize the expanded dataset of $(M+K+V)$ samples to train a semi-supervised training model. This process is repeated for a total of $R$ iterations to obtain the final results.  
 
 ### Dataset
 

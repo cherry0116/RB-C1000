@@ -1,0 +1,60 @@
+astropy==5.2.2
+Brotli @ file:///tmp/abs_ecyw11_7ze/croots/recipe/brotli-split_1659616059936/work
+CacheControl==0.12.11
+cachy==0.3.0
+certifi @ file:///croot/certifi_1700501669400/work/certifi
+cffi==1.15.0
+charset-normalizer==2.0.12
+cleo==0.8.1
+clikit==0.6.2
+crashtest==0.3.1
+cryptography==36.0.2
+distlib==0.3.4
+filelock==3.6.0
+html5lib==1.1
+idna==3.3
+importlib-metadata==4.11.3
+install==1.3.5
+jeepney==0.8.0
+joblib @ file:///croot/joblib_1685113087166/work
+keyring==23.5.0
+lockfile==0.12.2
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+msgpack==1.0.3
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+packaging==20.9
+pastel==0.2.1
+pexpect==4.8.0
+Pillow @ file:///croot/pillow_1696580024257/work
+pkginfo==1.8.2
+platformdirs==2.5.2
+poetry==1.1.13
+poetry-core==1.0.8
+pooch @ file:///croot/pooch_1695850093751/work
+ptyprocess==0.7.0
+pycparser==2.21
+pyerfa==2.0.0.3
+pylev==1.4.0
+pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
+pyparsing==3.0.8
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+PyYAML==6.0.1
+requests==2.27.1
+requests-toolbelt==0.9.1
+scikit-learn @ file:///croot/scikit-learn_1694788527225/work
+scipy==1.10.1
+SecretStorage==3.3.2
+shellingham==1.4.0
+six==1.16.0
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+tomlkit==0.10.2
+torch==1.13.1
+torchaudio==0.13.1
+torchvision==0.14.1
+typing_extensions @ file:///croot/typing_extensions_1705599297034/work
+urllib3==1.26.9
+virtualenv==20.14.1
+webencodings==0.5.1
+zipp==3.8.0

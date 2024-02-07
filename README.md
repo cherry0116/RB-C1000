@@ -49,3 +49,5 @@ After training the model will directly evaluate the performance. If you want to 
     CUDA_VISIBLE_DEVICES=0 python load_bestckpt.py
 
 ### Performance
+
+<img src="picture/performance.png" alt="vis2" style="zoom:30%;" />

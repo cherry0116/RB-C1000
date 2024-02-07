@@ -43,7 +43,7 @@ def create_dataset(main_opt,img_size):
     train_labidx,train_unlabidx,nouse_idx,test_idx=\
         shuffle_idx[:first_train_labidx_num],shuffle_idx[first_train_labidx_num:int(first_train_labidx_num+10000*main_opt.unlab_level)],\
             shuffle_idx[int(first_train_labidx_num+10000*main_opt.unlab_level):first_train_labidx_num+first_train_unlabidx_num],shuffle_idx[first_train_labidx_num+first_train_unlabidx_num:]
-    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(np.int)
+    train_val_num=(np.array(train_val_ratio)*train_labidx.shape[0]).astype(int)
     train_labidx_train,train_labidx_val=train_labidx[:train_val_num[0]],train_labidx[train_val_num[0]:]
            
     #get different split 

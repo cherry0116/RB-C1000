@@ -5,6 +5,8 @@ import time
 import argparse
 import os
 import sys 
+import warnings
+warnings.filterwarnings("ignore")
 
 sys.path += ['./first_train', './select_sample','./second_train','./pse_label','./re_train']
 import first_train
@@ -33,7 +35,7 @@ def parse_opt():
     parser.add_argument('--bias_select_ratio', type=float, default=0.001)
     parser.add_argument('--threshold', type=float, default=0.95)
     parser.add_argument('--unlab_level', type=float, default=1)
-    parser.add_argument('--dataset_path', type=str, default='../../../astro_data/cls/new_collection')  #new_data
+    parser.add_argument('--dataset_path', type=str, default='../../../Datasets/astronomy/transient_field/new_collection')  
     parser.add_argument('--data_name', type=str, default='new_data')
 
     #parser.add_argument('--fid', type=str, default='zg')

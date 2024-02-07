@@ -133,8 +133,4 @@ dependencies:
   - xz=5.4.5=h5eee18b_0
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.5=hc292b87_0
-  - pip:
-    - astropy==5.2.2
-    - pyerfa==2.0.0.3
-    - pyyaml==6.0.1
 prefix: /data/LiuYating/Anaconda3/envs/astro_cls

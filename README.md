@@ -18,10 +18,9 @@ We have constructed new real/bogus classification datasets from [the Zwicky Tran
 ## Usage
 ### Train
 
-Clone this project and then go to the code directory:
+Clone this project:
 
     git clone https://github.com/cherry0116/RB-C1000.git
-    cd cls_code
 
 We train the model on the following environments:
 
@@ -31,11 +30,22 @@ We train the model on the following environments:
     Torchaudio 0.13.1
     Cuda 11.6
 
-You can build the environment quickly by installing the requirements:
+You can go to the install directory and build the environment quickly by installing the requirements:
 
-    conda env create -f requirements.yml
+    cd install_folder
+    conda env create -f astro_cls.yaml
     conda activate astro_cls
+    pip install -r astro_cls.txt
 
-Train RB-C1000:
+We then go to the code directory and train the RB-C1000 model:
+    
+    cd ../cls_code
+    CUDA_VISIBLE_DEVICES=0 python main.py
 
 ### Evaluate
+
+After training the model will directly evaluate the performance. If you want to test a given checkpoint, you need to modify the "resume" of the "load_bestckpt.py" and then run:
+
+    CUDA_VISIBLE_DEVICES=0 python load_bestckpt.py
+
+### Performance

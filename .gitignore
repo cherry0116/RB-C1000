@@ -1,3 +1,3 @@
-/__pycache__/
-/save_log_when_training/
-/save_load_from_ckpt/
+/cls_code/*/*/*.pyc
+/cls_code/save_log_when_training/
+/cls_code/save_load_from_ckpt/

@@ -48,6 +48,24 @@ After training the model will directly evaluate the performance. If you want to 
 
     CUDA_VISIBLE_DEVICES=0 python load_bestckpt.py
 
+### Other
+In this article, we adopt "sum" as the final measurement metric and select the model parameters that yield the best sum value on the validation set, saving these optimal parameters as the final real/bogus classification model parameters. In actual code usage, you can choose one metric (Precision/Accuracy/Recall/F1 score/MCC/AP/Sum) that you prioritize and modify the select_model parameter to the chosen indicator.
+For example, if you prioritize "Accuracy," you can run the following command to train the RB-C1000 model:
+
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model Acc
+
+Similarly, you can run the following command if you prioritize Precision/Recall/F1 score/MCC/AP:
+
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model Pre
+    
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model Rec
+    
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model F1
+
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model Mcc
+
+    CUDA_VISIBLE_DEVICES=0 python main.py --select_model AP
+
 ### Performance
 
 <img src="picture/performance.png" alt="vis2" style="zoom:30%;" />

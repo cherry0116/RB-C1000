@@ -37,20 +37,18 @@ def parse_opt():
     parser.add_argument('--bias_select_ratio', type=float, default=0.001)
     parser.add_argument('--threshold', type=float, default=0.95)
     parser.add_argument('--unlab_level', type=float, default=1)
-    parser.add_argument('--dataset_path', type=str, default='../../../Datasets/astronomy/transient_field/new_collection')  
+    parser.add_argument('--dataset_path', type=str, default='../../DATASET/new_cls_dataset')  
     parser.add_argument('--data_name', type=str, default='new_data')
 
-    #parser.add_argument('--fid', type=str, default='zg')
-    #parser.add_argument('--fid', type=str, default='zr')
-    parser.add_argument('--fid', type=str, default='fuse')
-
+    parser.add_argument('--fid', type=str, default='zg')
     args = parser.parse_args()
     return args
 
 def main(main_opt):
     random_number = main_opt.random_number
     time_now=time.strftime("%Y.%m.%d_%H%M%S", time.localtime())
-    save_root_path='./save_log_when_training/'+str(main_opt.data_name)+'_'+str(time_now)+'_random_number'+str(random_number)+'_level'+str(main_opt.unlab_level)+'_'+str(main_opt.train_labidx_num)+'_'+str(main_opt.test_ratio)+'_'+str(main_opt.trainval_ratio)
+    save_root_path='./save_log_when_training/'+str(main_opt.fid)+'_'+str(time_now)+'_rseed'+str(random_number)+'_level'+str(main_opt.unlab_level)+'_'+str(main_opt.train_labidx_num)+\
+                    '_'+str(main_opt.test_ratio)+'_'+str(main_opt.trainval_ratio)+'_first_select_ratio'+str(main_opt.first_select_ratio)+'_hard'+str(main_opt.hard_select)
     first_train_path=save_root_path+'/first_train'
     os.makedirs(first_train_path,exist_ok=True)
     first_train.main(first_train_path,main_opt)
@@ -62,7 +60,7 @@ def main(main_opt):
     second_train.main(first_train_path,select_sample_path,second_train_path,main_opt)
     for repeat_time in range(main_opt.repeat_times):
         print('This is the '+str(repeat_time)+' repeat time!')
-        pse_path=save_root_path+'/pse_'+str(repeat_time)+'_generate'
+        pse_path=save_root_path+'/pseudo_'+str(repeat_time)+'_generate'
         os.makedirs(pse_path,exist_ok=True)
         pse_train.main(second_train_path,pse_path,main_opt)
         retrain_path=save_root_path+'/retrain_'+str(repeat_time)+'_time'

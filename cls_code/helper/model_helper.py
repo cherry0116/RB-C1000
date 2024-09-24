@@ -47,7 +47,7 @@ def weights_init_classifier(m):
 
 
 
-def build_model(model_type,init_cls=True,p_train=True):
+def build_model(model_type,init_cls=True,p_train=False):
     if model_type=='resnet18':    
         model = models.resnet18(pretrained=p_train)
         model.avgpool = nn.AdaptiveAvgPool2d(1)

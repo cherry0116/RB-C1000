@@ -6,6 +6,7 @@ from torch.utils.data import DataLoader
 import pandas as pd
 import argparse
 import sys 
+
 sys.path += ['./load_ckpt','./helper']
 import load_Dataset
 from helper.model_helper import build_model
@@ -25,17 +26,17 @@ def load_dataset(load_opt,data_name,ori_fid,fid,train_unlabidx,nouse_idx,test_id
 def parse_opt():
     """Parses the input arguments."""
     parser = argparse.ArgumentParser()
-    parser.add_argument('--resume', type=str, default='./save_log_when_training/new_data_2023.04.06_215655_random_number4_level1_1000_0.1_6,4/retrain_4_time')
+    parser.add_argument('--resume', type=str, default='./save_log_when_training/fuse_level1_1000_hard/fuse_2024.09.17_002340_rseed9_level1_1000_0.1_6,4_first_select_ratio0.9_hardyes/retrain_2_time')
     parser.add_argument('--batch_size', type=int, default=256)
     parser.add_argument('--train_unlabidx', type=str, default='no')
     parser.add_argument('--test_idx', type=str, default='yes')
     parser.add_argument('--nouse', type=str, default='no')
     parser.add_argument('--train_unlabdix_test_idx_nouse', type=str, default='no')
     parser.add_argument('--get_result', type=str, default='yes')
-    parser.add_argument('--test_dataset_path', type=str, default='../../../astro_data/cls/new_collection')
+    parser.add_argument('--test_dataset_path', type=str, default='../../DATASET/new_cls_dataset')
     
-    #parser.add_argument('--fid', type=str, default='zg')
-    parser.add_argument('--fid', type=str, default='zr')
+    parser.add_argument('--fid', type=str, default='zg')
+    #parser.add_argument('--fid', type=str, default='zr')
     #parser.add_argument('--fid', type=str, default='fuse')
     
     args = parser.parse_args()
@@ -60,8 +61,8 @@ def main():
     load_path=load_opt.resume
     root_path=load_path.rsplit('/',1)[0]
     time_now=time.strftime("%Y.%m.%d_%H%M%S", time.localtime())
-    data_name=root_path.rsplit('/',1)[1].split('_')[0]+'_'+root_path.rsplit('/',1)[1].split('_')[1]
-    save_fname=data_name+'_'+str(time_now)+'_random_number'+root_path.split('random_number')[1]
+    data_name='new_data'
+    save_fname=data_name+'_'+str(time_now)+'_random_number'+root_path.split('rseed')[1]
 
     for file_name in os.listdir(load_path):
         if file_name.endswith('_log.txt'):

@@ -7,8 +7,8 @@ from    torch.utils.data import Dataset
 from astropy.table import Table
 
 def load_imglabel_new_data(root):
-    fname_true=str(root.rsplit('/',1)[1])+'_true_data.fits'
-    fname_fake=str(root.rsplit('/',1)[1])+'_false_data.fits'
+    fname_true='new_real_'+str(root.rsplit('/',1)[1])+'.fits'
+    fname_fake='new_bogus_'+str(root.rsplit('/',1)[1])+'.fits'
     tab_true= Table.read(os.path.join(root, fname_true))
     tab_fake= Table.read(os.path.join(root, fname_fake))
     imgs_true=np.array(tab_true['star_stamp']) 

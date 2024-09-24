@@ -13,7 +13,7 @@ Our method follows a three-stage architecture:
 
 ### Dataset
 
-We have constructed new real/bogus classification datasets from [the Zwicky Transient Facility (ZTF)](https://arxiv.org/abs/1902.01932) to verify the effectiveness of our approach. We collected three newly compiled datasets for the real/bogus classification task, including two single-band datasets (ZTF-NEWg: g-band, ZTF-NEWr: r-band) and one mixed-band dataset (ZTF-NEWm: take half of the g-band data and half of the r-band data). Each of the three dataset with 13000 real sources and 30000 bogus detections. It can be downloaded at [here](https://drive.google.com/drive/folders/18zGGfTP13CqnD3J5aQBtE4zszDUSgldg?usp=sharing).
+We have constructed new real/bogus classification datasets from [the Zwicky Transient Facility (ZTF)](https://arxiv.org/abs/1902.01932) to verify the effectiveness of our approach. We collected three newly compiled datasets for the real/bogus classification task, including two single-band datasets (ZTF-NEWg: g-band, ZTF-NEWr: r-band) and one mixed-band dataset (ZTF-NEWm: take half of the g-band data and half of the r-band data). Each of the three dataset with 13000 real sources and 30000 bogus detections. It can be downloaded at [here](https://drive.google.com/drive/folders/13KeDOe6O9D3VGYM2l7FwT4U3SlsaB3qN?usp=sharing).
 
 ## Usage
 ### Train
@@ -73,7 +73,7 @@ Similarly, you can run the following command if you prioritize Precision/Recall/
 Take the ZTF-NEWg dataset as an example:
 
 - Row 1: **In the Initial Training Stage (ITS)**, using 900 labeled samples, our model achieved an overall performance of 572.2\%, of which accuracy and recall were 96.7\% and 95.5\% respectively. This result demonstrates that our model can effectively distinguish real detections and bogus sources with a limited number of labeled data.
-- Row 2: **In the Active Learning Stage (ALS)**, we incorporated an additional set of the $K$ challenging samples, which were determined by the model trained in the ITS. These $K$ samples were labeled by experts. By utilizing the $(M+K=1000)$ labeled samples for training in the ALS, the overall performance increased by 7.4\% compared to the overall result of the ITS.
+- Row 2: **In the Active Learning Stage (ALS)**, we incorporated an additional set of the $K$ challenging samples, which were determined by the model trained in the ITS. These $K$ samples were labeled by experts. By utilizing the $(M+K=1000)$ labeled samples for training in the ALS, the overall performance increased by 13.9\% compared to the overall result of the ITS.
 - Row 3-7: **In the Semi-supervised Learning Stage (SSLS)**, we employed $V$ high-confidence samples, in addition to the labeled $(M+K)$ samples, to train the semi-supervised training model. By repeating the SSLS process for R=1, 2, 3, 4, and 5 iterations, we achieved respective overall performance indicators of 588.2\%, 589.9\%, 590.2\%, 589.8\%, and 589.9\%. This iterative process in the SSLS allowed us to refine the model's performance and enhance the accuracy and reliability of the final classification results. We notice that SSLS $(R = 3)$ often shows the best performance on the overall indicator on these three datasets we collected, so we set $R = 3$ in this paper.
 
 ## Contact

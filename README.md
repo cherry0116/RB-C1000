@@ -68,13 +68,13 @@ Similarly, you can run the following command if you prioritize Precision/Recall/
 
 ### Performance
 
-<img src="picture/performance.png" alt="vis2" style="zoom:30%;" />
+<img src="picture/results.png" alt="vis2" style="zoom:30%;" />
 
 Take the ZTF-NEWg dataset as an example:
 
-- Row 1: **In the Initial Training Stage (ITS)**, using 900 labeled samples, our model achieved an overall performance of 582.4\%, of which accuracy and recall were 97.9\% and 96.3\% respectively. This result demonstrates that our model can effectively distinguish real detections and bogus sources with a limited number of labeled data.
+- Row 1: **In the Initial Training Stage (ITS)**, using 900 labeled samples, our model achieved an overall performance of 572.2\%, of which accuracy and recall were 96.7\% and 95.5\% respectively. This result demonstrates that our model can effectively distinguish real detections and bogus sources with a limited number of labeled data.
 - Row 2: **In the Active Learning Stage (ALS)**, we incorporated an additional set of the $K$ challenging samples, which were determined by the model trained in the ITS. These $K$ samples were labeled by experts. By utilizing the $(M+K=1000)$ labeled samples for training in the ALS, the overall performance increased by 7.4\% compared to the overall result of the ITS.
-- Row 3-7: **In the Semi-supervised Learning Stage (SSLS)**, we employed $V$ high-confidence samples, in addition to the labeled $(M+K)$ samples, to train the semi-supervised training model. By repeating the SSLS process for R=1, 2, 3, 4, and 5 iterations, we achieved respective overall performance indicators of 591.3\%, 592.5\%, 593.5\%, 593.4\%, and 593.3\%. This iterative process in the SSLS allowed us to refine the model's performance and enhance the accuracy and reliability of the final classification results. We notice that SSLS $(R = 3)$ often shows the best performance on the overall indicator on these three datasets we collected, so we set $R = 3$ in this paper.
+- Row 3-7: **In the Semi-supervised Learning Stage (SSLS)**, we employed $V$ high-confidence samples, in addition to the labeled $(M+K)$ samples, to train the semi-supervised training model. By repeating the SSLS process for R=1, 2, 3, 4, and 5 iterations, we achieved respective overall performance indicators of 588.2\%, 589.9\%, 590.2\%, 589.8\%, and 589.9\%. This iterative process in the SSLS allowed us to refine the model's performance and enhance the accuracy and reliability of the final classification results. We notice that SSLS $(R = 3)$ often shows the best performance on the overall indicator on these three datasets we collected, so we set $R = 3$ in this paper.
 
 ## Contact
 
